@@ -9,7 +9,7 @@ import (
 
 	"gorm.io/gorm/utils"
 
-	_ "github.com/godror/godror"
+	_ "github.com/sijms/go-ora"
 	"github.com/thoas/go-funk"
 	"gorm.io/gorm"
 	"gorm.io/gorm/callbacks"

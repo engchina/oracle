@@ -3,6 +3,7 @@ package oracle
 import (
 	"bytes"
 	"database/sql"
+	"github.com/engchina/oracle/clauses"
 	"reflect"
 
 	"github.com/thoas/go-funk"
@@ -10,8 +11,6 @@ import (
 	"gorm.io/gorm/callbacks"
 	"gorm.io/gorm/clause"
 	gormSchema "gorm.io/gorm/schema"
-
-	"github.com/dzwvip/oracle/clauses"
 )
 
 func Create(db *gorm.DB) {
@@ -134,7 +133,7 @@ func Create(db *gorm.DB) {
 							func(field *gormSchema.Field) {
 								switch insertTo.Kind() {
 								case reflect.Struct:
-									if err = field.Set(stmt.Context,insertTo, stmt.Vars[boundVars[field.Name]].(sql.Out).Dest); err != nil {
+									if err = field.Set(stmt.Context, insertTo, stmt.Vars[boundVars[field.Name]].(sql.Out).Dest); err != nil {
 										db.AddError(err)
 									}
 								case reflect.Map:
