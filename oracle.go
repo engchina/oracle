@@ -3,14 +3,14 @@ package oracle
 import (
 	"database/sql"
 	"fmt"
+	"github.com/thoas/go-funk"
 	"regexp"
 	"strconv"
 	"strings"
 
 	"gorm.io/gorm/utils"
 
-	_ "github.com/sijms/go-ora"
-	"github.com/thoas/go-funk"
+	_ "github.com/engchina/go-ora/v2"
 	"gorm.io/gorm"
 	"gorm.io/gorm/callbacks"
 	"gorm.io/gorm/clause"
